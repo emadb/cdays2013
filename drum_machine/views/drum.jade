@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  .container
+    h1 Drum Machine
+    .row
+        .span2
+            button(class="drum btn btn-xlarge", data-sound="snare") Snare
+        .span2
+            button(class="drum btn btn-xlarge", data-sound="hhat_closed") hhat_closed
+        .span2
+            button(class="drum btn btn-xlarge", data-sound="hhat_open") hhat_open
+        .span2
+            button(class="drum btn btn-xlarge", data-sound="crash") crash
+        .span1
+            a(id="start-tick", class="btn btn-info")
+                i(class="icon-play") 
+        .span1
+            a(id="stop-tick", class="btn btn-info")
+                i(class="icon-stop")
+
+    .row
+        .span2
+            button(class="drum btn btn-xlarge", data-sound="kick") kick
+        .span2
+            button(class="drum btn btn-xlarge", data-sound="stick") stick
+        .span2
+            button(class="drum btn btn-xlarge", data-sound="tom_1") tom_1
+        .span2
+            button(class="drum btn btn-xlarge", data-sound="tom_2") tom_2
+        .span2
+            .well
+                h3 Drummers
+                ul#users
+
+  #userModal.modal.hide.fade
+    .modal-header
+      button(class="close", data-dismiss="modal", aria-hidden="true") &times;
+      h3 Insert your name
+    .modal-body
+      input(type="text", id="user-name")
+    .modal-footer
+      a(href="#", class="btn btn-primary", id="join-drum") Apply
+    
+block scripts
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascripts/drum.js')
+
