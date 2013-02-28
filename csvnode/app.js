@@ -24,7 +24,7 @@ mongo.connect("mongodb://localhost:27017/cdays13", function(err, db) {
         }
     })
     .on('end', function(count){
-        console.log('Imported ' + count + ' records');
+        console.log('Imported ' + count - 1 + ' records');
         var endTime = new Date();
         console.log(endTime - startTime);
         process.exit(0);
